@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Anaf.Net.Bilant.Responses;
@@ -18,6 +19,9 @@ namespace Anaf.Net
     {
         public async Task<PlatitorTvaAnafResponse> GetInformatiiPlatitorTva(params int[] cui)
         {
+            if (cui.Length > 500)
+                throw new IndexOutOfRangeException("Numar prea mare de elemente. (max < 500)");
+
             var request = cui.Select(c => new PlatitorTvaAnafRequest(c));
 
             var response = await PostAsync<IEnumerable<PlatitorTvaAnafRequest>, PlatitorTvaAnafResponse>(
@@ -27,9 +31,11 @@ namespace Anaf.Net
         }
 
 
-
         public async Task<PlatitorTvaAnafAsyncResponse> InregistreazaCerereInformatiiPlatitorTvaAsync(params int[] cui)
         {
+            if (cui.Length > 500)
+                throw new IndexOutOfRangeException("Numar prea mare de elemente. (max < 500)");
+
             var request = cui.Select(c => new PlatitorTvaAnafRequest(c));
 
             var response = await PostAsync<IEnumerable<PlatitorTvaAnafRequest>, PlatitorTvaAnafAsyncResponse>(
@@ -56,6 +62,9 @@ namespace Anaf.Net
 
         public async Task<RegAgricAnafResponse> GetInformatiiRegAgric(params int[] cui)
         {
+            if (cui.Length > 500)
+                throw new IndexOutOfRangeException("Numar prea mare de elemente. (max < 500)");
+
             var request = cui.Select(c => new RegAgricAnafRequest(c));
 
             var response = await PostAsync<IEnumerable<RegAgricAnafRequest>, RegAgricAnafResponse>(
@@ -66,6 +75,9 @@ namespace Anaf.Net
 
         public async Task<RegCultAnafResponse> GetInformatiiRegCult(params int[] cui)
         {
+            if (cui.Length > 500)
+                throw new IndexOutOfRangeException("Numar prea mare de elemente. (max < 500)");
+
             var request = cui.Select(c => new RegCultAnafRequest(c));
 
             var response = await PostAsync<IEnumerable<RegCultAnafRequest>, RegCultAnafResponse>(
