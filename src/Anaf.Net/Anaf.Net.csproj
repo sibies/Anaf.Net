@@ -1,0 +1,45 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageProjectUrl>https://sibies.ro</PackageProjectUrl>
+    <Authors>Sibies Soft</Authors>
+    <Company>Sibies Soft</Company>
+    <Product>Anaf.Net</Product>
+    <Copyright>Copyright © Sibies Soft</Copyright>
+    <RepositoryUrl>https://github.com/sibies/Anaf.Net</RepositoryUrl>
+    <PackageTags>anaf servicii spv</PackageTags>
+    <NeutralLanguage>ro</NeutralLanguage>
+    <PackageIcon>anaf_ro.png</PackageIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Bilant\Responses\" />
+    <Folder Include="Bilant\Requests\" />
+    <Folder Include="RegAgric\Responses\" />
+    <Folder Include="RegAgric\Requests\" />
+    <Folder Include="RegCult\Requests\" />
+    <Folder Include="RegCult\Responses\" />
+    <Folder Include="Responses\" />
+    <Folder Include="Requests\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\anaf_ro.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+    <None Include="..\..\LICENSE">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+
+</Project>
