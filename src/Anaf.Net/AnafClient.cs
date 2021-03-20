@@ -7,6 +7,10 @@ using Anaf.Net.Contracts;
 using Anaf.Net.Internal;
 using Anaf.Net.PlatitorTva.Requests;
 using Anaf.Net.PlatitorTva.Responses;
+using Anaf.Net.RegAgric.Requests;
+using Anaf.Net.RegAgric.Responses;
+using Anaf.Net.RegCult.Requests;
+using Anaf.Net.RegCult.Responses;
 
 namespace Anaf.Net
 {
@@ -46,6 +50,26 @@ namespace Anaf.Net
         {
             var response = await GetAsync<BilantAnafResponse>(
                 string.Format(ApiConsts.EndPoints.Bilant.BilantSyncApiPath, an, cui));
+
+            return response;
+        }
+
+        public async Task<RegAgricAnafResponse> GetInformatiiRegAgric(params int[] cui)
+        {
+            var request = cui.Select(c => new RegAgricAnafRequest(c));
+
+            var response = await PostAsync<IEnumerable<RegAgricAnafRequest>, RegAgricAnafResponse>(
+                ApiConsts.EndPoints.RegAgric.V2.WsAgricSyncApiPath, request);
+
+            return response;
+        }
+
+        public async Task<RegCultAnafResponse> GetInformatiiRegCult(params int[] cui)
+        {
+            var request = cui.Select(c => new RegCultAnafRequest(c));
+
+            var response = await PostAsync<IEnumerable<RegCultAnafRequest>, RegCultAnafResponse>(
+                ApiConsts.EndPoints.RegCult.V2.WsCultSyncApiPath, request);
 
             return response;
         }

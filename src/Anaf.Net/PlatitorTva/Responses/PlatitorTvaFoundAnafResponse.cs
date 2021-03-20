@@ -18,7 +18,7 @@
     /// Campurile referitoare la plata defalcata a TVA: 
     /// dataInceputSplitTVA, dataAnulareSplitTVA, statusSplitTVA, iban
     /// </summary>
-    public class PlatitorTvaAnafResponseFound
+    public class PlatitorTvaFoundAnafResponse
     {
         public bool Success => !string.IsNullOrEmpty(Denumire);
 

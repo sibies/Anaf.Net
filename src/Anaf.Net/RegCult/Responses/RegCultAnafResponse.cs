@@ -1,15 +1,15 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace Anaf.Net.PlatitorTva.Responses
+namespace Anaf.Net.RegCult.Responses
 {
-    public class PlatitorTvaAnafResponse
+    public class RegCultAnafResponse
     {
         private const string Success_Message = "SUCCESS";
 
-        public PlatitorTvaAnafResponse()
+        public RegCultAnafResponse()
         {
-            Found = new List<PlatitorTvaFoundAnafResponse>();
+            Found = new List<RegCultFoundAnafResponse>();
             Notfound = new List<object>();
         }
         /// <summary>
@@ -24,7 +24,7 @@ namespace Anaf.Net.PlatitorTva.Responses
         /// SUCCESS
         /// </summary>
         public string Message { get; set; }
-        public List<PlatitorTvaFoundAnafResponse> Found { get; set; }
+        public List<RegCultFoundAnafResponse> Found { get; set; }
         public List<object> Notfound { get; set; }
     }
 }

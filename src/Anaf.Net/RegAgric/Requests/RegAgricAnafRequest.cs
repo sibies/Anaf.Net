@@ -1,15 +1,15 @@
 ﻿using System;
 
-namespace Anaf.Net.PlatitorTva.Requests
+namespace Anaf.Net.RegAgric.Requests
 {
-    public class PlatitorTvaAnafRequest
+    public class RegAgricAnafRequest
     {
-        public PlatitorTvaAnafRequest(int cui): 
+        public RegAgricAnafRequest(int cui) :
             this(cui, DateTime.Now)
         {
         }
 
-        public PlatitorTvaAnafRequest(int cui, DateTime data)
+        public RegAgricAnafRequest(int cui, DateTime data)
         {
             Cui = cui;
             _data = data;
