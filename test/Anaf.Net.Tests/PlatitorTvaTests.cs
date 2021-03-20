@@ -1,4 +1,3 @@
-using System;
 using System.Threading.Tasks;
 using Anaf.Net.PlatitorTva;
 using FluentAssertions;

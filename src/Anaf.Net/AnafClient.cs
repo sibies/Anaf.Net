@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Anaf.Net.Bilant.Responses;
 using Anaf.Net.Constants;
 using Anaf.Net.Contracts;
 using Anaf.Net.Internal;
@@ -37,6 +38,14 @@ namespace Anaf.Net
         {
             var response = await GetAsync<PlatitorTvaAnafResponse>(
                 string.Format(ApiConsts.EndPoints.PlatitorTva.V5.WsTvaDescarcaRaspunsAsyncApiPath, id));
+
+            return response;
+        }
+
+        public async Task<BilantAnafResponse> GetBilant(int cui, int an)
+        {
+            var response = await GetAsync<BilantAnafResponse>(
+                string.Format(ApiConsts.EndPoints.Bilant.BilantSyncApiPath, an, cui));
 
             return response;
         }

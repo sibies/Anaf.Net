@@ -14,6 +14,7 @@ namespace Anaf.Net.Internal
         public async Task<T> GetAsync<T>(string uri)
         {
             var response = await GetStringAsync(new Uri(uri));
+
             return !response.Contains("error")
                 ? JsonConverter.DeserializeObject<T>(response)
                 : default;

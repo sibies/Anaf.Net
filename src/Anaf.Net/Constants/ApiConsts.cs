@@ -4,18 +4,16 @@ namespace Anaf.Net.Constants
 {
     public static class ApiConsts
     {
-        public const string Version = "1.0.0";
+        public const string Version = "1.1.0";
 
         public static class EndPoints
         {
             public const string BaseApiUrl = "https://webservicesp.anaf.ro";
-            public const string BaseApiPath = BaseApiUrl + "/payment/rest";
-            public const string BaseRegisterApiPath = BaseApiPath + "/register.do";
 
             public static class Bilant
             {
                 public const string BaseServiceSyncApiPath = BaseApiUrl + "/bilant";
-                public const string BilantSyncApiPath = BaseServiceSyncApiPath;
+                public const string BilantSyncApiPath = BaseServiceSyncApiPath + "?an={0}&cui={1}";
             }
 
             public static class PlatitorTva
