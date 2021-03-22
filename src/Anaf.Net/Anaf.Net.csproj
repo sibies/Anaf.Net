@@ -14,12 +14,11 @@
     <PackageTags>anaf servicii spv</PackageTags>
     <NeutralLanguage>ro</NeutralLanguage>
     <PackageIcon>anaf_ro.png</PackageIcon>
-    <Version>1.2.0</Version>
+    <Version>1.3.0</Version>
   </PropertyGroup>
 
   <ItemGroup>
     <Folder Include="Bilant\Requests\" />
-    <Folder Include="Responses\" />
     <Folder Include="Requests\" />
   </ItemGroup>
 

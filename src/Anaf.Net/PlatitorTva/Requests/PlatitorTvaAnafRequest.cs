@@ -1,23 +1,16 @@
 ﻿using System;
+using Anaf.Net.Requests;
 
 namespace Anaf.Net.PlatitorTva.Requests
 {
-    public class PlatitorTvaAnafRequest
+    public class PlatitorTvaAnafRequest : AnafBaseRequest
     {
-        public PlatitorTvaAnafRequest(int cui): 
-            this(cui, DateTime.Now)
+        public PlatitorTvaAnafRequest(int cui) : base(cui)
         {
         }
 
-        public PlatitorTvaAnafRequest(int cui, DateTime data)
+        public PlatitorTvaAnafRequest(int cui, DateTime data) : base(cui, data)
         {
-            Cui = cui;
-            _data = data;
         }
-
-        public int Cui { get; set; }
-
-        private DateTime _data;
-        public string Data => _data.ToString("yyyy-MM-dd");
     }
 }

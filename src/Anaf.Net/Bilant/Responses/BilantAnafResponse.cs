@@ -1,8 +1,9 @@
 ﻿using System.Collections.Generic;
+using Anaf.Net.Responses;
 
 namespace Anaf.Net.Bilant.Responses
 {
-    public class BilantAnafResponse
+    public class BilantAnafResponse: AnafBaseResponse
     {
         public int An { get; set; }
         public int Cui { get; set; }
@@ -12,5 +13,6 @@ namespace Anaf.Net.Bilant.Responses
 
         public List<BilantIAnafResponse> I { get; set; }
 
+        public override bool Success => !string.IsNullOrEmpty(Deni);
     }
 }

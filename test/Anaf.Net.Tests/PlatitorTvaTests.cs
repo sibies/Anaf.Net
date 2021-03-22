@@ -9,12 +9,13 @@ namespace Anaf.Net.Tests
     {
         private const int CuiTest = 40790057;
 
-        [Fact]
-        public async Task GetInformatiiPlatitorTvaSync()
+        [Theory]
+        [InlineData(CuiTest)]
+        public async Task GetInformatiiPlatitorTvaSync(int cui)
         {
             IPlatitorTvaAnafClient client = new AnafClient();
 
-            var response = await client.GetInformatiiPlatitorTva(CuiTest);
+            var response = await client.GetInformatiiPlatitorTva(cui);
             response.Success.Should().BeTrue();
         }
 

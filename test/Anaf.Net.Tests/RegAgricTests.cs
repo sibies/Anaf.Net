@@ -9,13 +9,14 @@ namespace Anaf.Net.Tests
     {
         private const int CuiTest = 40790057;
 
-        [Fact]
-        public async Task GetInformatiiRegAgric()
+        [Theory]
+        [InlineData(CuiTest)]
+        public async Task GetInformatiiRegAgric(int cui)
         {
             IRegAgricAnafClient client = new AnafClient();
 
-            var response = await client.GetInformatiiRegAgric(CuiTest);
-            response.Success.Should().BeTrue();
+            var response = await client.GetInformatiiRegAgric(cui);
+            response.Success.Should().BeFalse();
         }
     }
 }

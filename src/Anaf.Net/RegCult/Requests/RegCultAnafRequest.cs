@@ -1,23 +1,17 @@
 ﻿using System;
+using Anaf.Net.Requests;
+using Newtonsoft.Json;
 
 namespace Anaf.Net.RegCult.Requests
 {
-    public class RegCultAnafRequest
+    public class RegCultAnafRequest: AnafBaseRequest
     {
-        public RegCultAnafRequest(int cui) :
-            this(cui, DateTime.Now)
+        public RegCultAnafRequest(int cui) : base(cui)
         {
         }
 
-        public RegCultAnafRequest(int cui, DateTime data)
+        public RegCultAnafRequest(int cui, DateTime data) : base(cui, data)
         {
-            Cui = cui;
-            _data = data;
         }
-
-        public int Cui { get; set; }
-
-        private DateTime _data;
-        public string Data => _data.ToString("yyyy-MM-dd");
     }
 }

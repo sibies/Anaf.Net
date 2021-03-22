@@ -9,14 +9,15 @@ namespace Anaf.Net.Tests
     {
         private const int CuiTest = 40790057;
 
-        [Fact]
-        public async Task GetBilant()
+        [Theory]
+        [InlineData(CuiTest)]
+        public async Task GetBilant(int cui)
         {
             const int an = 2019;
             IBilantAnafClient client = new AnafClient();
 
-            var response = await client.GetBilant(CuiTest, an);
-            response.Cui.Should().BeGreaterThan(0);
+            var response = await client.GetBilant(cui, an);
+            response.Success.Should().BeTrue();
         }
     }
 }

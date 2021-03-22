@@ -9,13 +9,14 @@ namespace Anaf.Net.Tests
     {
         private const int CuiTest = 40790057;
 
-        [Fact]
-        public async Task GetInformatiiRegCult()
+        [Theory]
+        [InlineData(CuiTest)]
+        public async Task GetInformatiiRegCult(int cui)
         {
             IRegCultAnafClient client = new AnafClient();
 
-            var response = await client.GetInformatiiRegCult(CuiTest);
-            response.Success.Should().BeTrue();
+            var response = await client.GetInformatiiRegCult(cui);
+            response.Success.Should().BeFalse();
         }
     }
 }
