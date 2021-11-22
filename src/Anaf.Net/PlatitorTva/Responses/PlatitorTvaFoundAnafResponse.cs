@@ -211,5 +211,10 @@ namespace Anaf.Net.PlatitorTva.Responses
         /// codul IBAN
         /// </summary>
         public string Iban { get; set; }
+
+        /// <summary>
+        /// figureaza in Registrul RO e-Factura / false - nu figureaza in Registrul RO e-Factura la data cautata
+        /// </summary>
+        public bool statusRO_e_Factura { get; set; }
     }
 }

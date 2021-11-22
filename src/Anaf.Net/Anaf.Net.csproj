@@ -14,16 +14,11 @@
     <PackageTags>anaf servicii spv</PackageTags>
     <NeutralLanguage>ro</NeutralLanguage>
     <PackageIcon>anaf_ro.png</PackageIcon>
-    <Version>1.4.0</Version>
+    <Version>1.5.0</Version>
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Bilant\Requests\" />
-    <Folder Include="Requests\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
   </ItemGroup>
 
   <ItemGroup>

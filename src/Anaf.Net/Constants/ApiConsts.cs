@@ -40,12 +40,21 @@ namespace Anaf.Net.Constants
                 /// <summary>
                 /// 
                 /// </summary>
+                [Obsolete("Se foloseste versiunea 6")]
                 public static class V5
                 {
                     public const string WsTvaSyncApiPath = BaseServiceSyncApiPath + "/api/v5/ws/tva";
 
                     public const string WsTvaAsyncApiPath = BaseServiceAsyncApiPath + "/api/v5/ws/tva";
                     public const string WsTvaDescarcaRaspunsAsyncApiPath = BaseServiceAsyncApiPath + "/api/v5/ws/tva?id={0}";
+                }
+
+                public static class V6
+                {
+                    public const string WsTvaSyncApiPath = BaseServiceSyncApiPath + "/api/v6/ws/tva";
+
+                    public const string WsTvaAsyncApiPath = BaseServiceAsyncApiPath + "/api/v6/ws/tva";
+                    public const string WsTvaDescarcaRaspunsAsyncApiPath = BaseServiceAsyncApiPath + "/api/v6/ws/tva?id={0}";
                 }
             }
 

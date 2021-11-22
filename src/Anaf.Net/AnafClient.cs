@@ -25,7 +25,7 @@ namespace Anaf.Net
             var request = cui.Select(c => new PlatitorTvaAnafRequest(c));
 
             var response = await PostAsync<IEnumerable<PlatitorTvaAnafRequest>, PlatitorTvaAnafResponse>(
-                ApiConsts.EndPoints.PlatitorTva.V5.WsTvaSyncApiPath, request);
+                ApiConsts.EndPoints.PlatitorTva.V6.WsTvaSyncApiPath, request);
 
             return response;
         }
@@ -39,7 +39,7 @@ namespace Anaf.Net
             var request = cui.Select(c => new PlatitorTvaAnafRequest(c));
 
             var response = await PostAsync<IEnumerable<PlatitorTvaAnafRequest>, PlatitorTvaAnafAsyncResponse>(
-                ApiConsts.EndPoints.PlatitorTva.V5.WsTvaAsyncApiPath, request);
+                ApiConsts.EndPoints.PlatitorTva.V6.WsTvaAsyncApiPath, request);
 
             return response;
         }
@@ -47,7 +47,7 @@ namespace Anaf.Net
         public async Task<PlatitorTvaAnafResponse> GetInformatiiPlatitorTvaAsync(string id)
         {
             var response = await GetAsync<PlatitorTvaAnafResponse>(
-                string.Format(ApiConsts.EndPoints.PlatitorTva.V5.WsTvaDescarcaRaspunsAsyncApiPath, id));
+                string.Format(ApiConsts.EndPoints.PlatitorTva.V6.WsTvaDescarcaRaspunsAsyncApiPath, id));
 
             return response;
         }
