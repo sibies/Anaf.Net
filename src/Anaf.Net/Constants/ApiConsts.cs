@@ -56,6 +56,22 @@ namespace Anaf.Net.Constants
                     public const string WsTvaAsyncApiPath = BaseServiceAsyncApiPath + "/api/v6/ws/tva";
                     public const string WsTvaDescarcaRaspunsAsyncApiPath = BaseServiceAsyncApiPath + "/api/v6/ws/tva?id={0}";
                 }
+
+                public static class V7
+                {
+                    public const string WsTvaSyncApiPath = BaseServiceSyncApiPath + "/api/v7/ws/tva";
+
+                    public const string WsTvaAsyncApiPath = BaseServiceAsyncApiPath + "/api/v7/ws/tva";
+                    public const string WsTvaDescarcaRaspunsAsyncApiPath = BaseServiceAsyncApiPath + "/api/v7/ws/tva?id={0}";
+                }
+
+                public static class V8
+                {
+                    public const string WsTvaSyncApiPath = BaseServiceSyncApiPath + "/api/v8/ws/tva";
+
+                    public const string WsTvaAsyncApiPath = BaseServiceAsyncApiPath + "/api/v8/ws/tva";
+                    public const string WsTvaDescarcaRaspunsAsyncApiPath = BaseServiceAsyncApiPath + "/api/v8/ws/tva?id={0}";
+                }
             }
 
             public static class RegAgric
