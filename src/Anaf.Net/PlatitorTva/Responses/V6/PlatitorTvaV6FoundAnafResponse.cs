@@ -1,8 +1,7 @@
 ﻿using System;
-using System.Globalization;
 using Newtonsoft.Json;
 
-namespace Anaf.Net.PlatitorTva.Responses
+namespace Anaf.Net.PlatitorTva.Responses.V6
 {
     /// <summary>
     /// Serviciu web pentru verificarea contribuabililor care sunt inregistrati conform art. 316 din Codul Fiscal, 
@@ -22,7 +21,7 @@ namespace Anaf.Net.PlatitorTva.Responses
     /// Campurile referitoare la plata defalcata a TVA: 
     /// dataInceputSplitTVA, dataAnulareSplitTVA, statusSplitTVA, iban
     /// </summary>
-    public class PlatitorTvaFoundAnafResponse
+    public class PlatitorTvaV6FoundAnafResponse: IPlatitorTvaAnafResponse
     {
         public bool Success => !string.IsNullOrEmpty(Denumire);
 
@@ -72,7 +71,7 @@ namespace Anaf.Net.PlatitorTva.Responses
         /// Stare Societate
         /// </summary>
         public string stare_inregistrare { get; set; }
-      
+
         /// <summary>
         /// true -pentru platitor in scopuri de tva 
         /// false in cazul in care nu e platitor  in scopuri de TVA la data cautata

@@ -2,7 +2,7 @@
 
 namespace Anaf.Net.Contracts
 {
-    public interface IAnafClientAsync: IPlatitorTvaAnafClientAsync
+    public interface IAnafClientAsync: IPlatitorTvaV6AnafClientAsync
     {
         
     }

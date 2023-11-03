@@ -5,7 +5,7 @@ using Anaf.Net.RegCult;
 
 namespace Anaf.Net.Contracts
 {
-    public interface IAnafClient: IPlatitorTvaAnafClient, IRegAgricAnafClient, IRegCultAnafClient, IBilantAnafClient
+    public interface IAnafClient: IPlatitorTvaV6AnafClient, IRegAgricAnafClient, IRegCultAnafClient, IBilantAnafClient
     {
         
     }

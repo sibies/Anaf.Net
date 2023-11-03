@@ -17,14 +17,27 @@ namespace Anaf.Net
 {
     public class AnafClient: JsonHttpClient, IAnafClient, IAnafClientAsync
     {
-        public async Task<PlatitorTvaAnafResponse> GetInformatiiPlatitorTva(params int[] cui)
+        public async Task<PlatitorTvaV8AnafResponse> GetInformatiiPlatitorTva(params int[] cui)
         {
             if (cui.Length > 500)
                 throw new IndexOutOfRangeException("Numar prea mare de elemente. (max < 500)");
 
             var request = cui.Select(c => new PlatitorTvaAnafRequest(c));
 
-            var response = await PostAsync<IEnumerable<PlatitorTvaAnafRequest>, PlatitorTvaAnafResponse>(
+            var response = await PostAsync<IEnumerable<PlatitorTvaAnafRequest>, PlatitorTvaV8AnafResponse>(
+                ApiConsts.EndPoints.PlatitorTva.V8.WsTvaSyncApiPath, request);
+
+            return response;
+        }
+
+        public async Task<PlatitorTvaV6AnafResponse> GetInformatiiPlatitorTvaV6(params int[] cui)
+        {
+            if (cui.Length > 500)
+                throw new IndexOutOfRangeException("Numar prea mare de elemente. (max < 500)");
+
+            var request = cui.Select(c => new PlatitorTvaAnafRequest(c));
+
+            var response = await PostAsync<IEnumerable<PlatitorTvaAnafRequest>, PlatitorTvaV6AnafResponse>(
                 ApiConsts.EndPoints.PlatitorTva.V6.WsTvaSyncApiPath, request);
 
             return response;
@@ -44,9 +57,17 @@ namespace Anaf.Net
             return response;
         }
 
-        public async Task<PlatitorTvaAnafResponse> GetInformatiiPlatitorTvaAsync(string id)
+        public async Task<PlatitorTvaV8AnafResponse> GetInformatiiPlatitorTvaAsync(string id)
         {
-            var response = await GetAsync<PlatitorTvaAnafResponse>(
+            var response = await GetAsync<PlatitorTvaV8AnafResponse>(
+                string.Format(ApiConsts.EndPoints.PlatitorTva.V8.WsTvaDescarcaRaspunsAsyncApiPath, id));
+
+            return response;
+        }
+
+        public async Task<PlatitorTvaV6AnafResponse> GetInformatiiPlatitorTvaV6Async(string id)
+        {
+            var response = await GetAsync<PlatitorTvaV6AnafResponse>(
                 string.Format(ApiConsts.EndPoints.PlatitorTva.V6.WsTvaDescarcaRaspunsAsyncApiPath, id));
 
             return response;
