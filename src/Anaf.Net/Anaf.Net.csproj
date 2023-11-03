@@ -1,21 +1,25 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>netstandard2.1</TargetFramework>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-    <PackageLicenseFile>LICENSE</PackageLicenseFile>
-    <PackageProjectUrl>https://sibies.ro</PackageProjectUrl>
-    <Authors>Sibies Soft</Authors>
-    <Company>Sibies Soft</Company>
-    <Product>Anaf.Net</Product>
-    <Copyright>Copyright © Sibies Soft</Copyright>
-    <RepositoryUrl>https://github.com/sibies/Anaf.Net</RepositoryUrl>
-    <PackageTags>anaf servicii spv</PackageTags>
-    <NeutralLanguage>ro</NeutralLanguage>
-    <PackageIcon>anaf_ro.png</PackageIcon>
-    <Version>1.5.0</Version>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFrameworks>netstandard2.1;net5.0;net6.0;net7.0</TargetFrameworks>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+		<PackageLicenseFile>LICENSE</PackageLicenseFile>
+		<PackageProjectUrl>https://sibies.ro</PackageProjectUrl>
+		<Authors>Sibies Soft</Authors>
+		<Company>Sibies Soft</Company>
+		<Product>Anaf.Net</Product>
+		<Copyright>Copyright © Sibies Soft</Copyright>
+		<RepositoryUrl>https://github.com/sibies/Anaf.Net</RepositoryUrl>
+		<PackageTags>anaf servicii spv web</PackageTags>
+		<NeutralLanguage>ro</NeutralLanguage>
+		<PackageIcon>anaf_ro.png</PackageIcon>
+		<Version>2.0.0</Version>
+		<Title>Servicii Web ANAF</Title>
+		<Description>Client .Net pentru Serviciile Web ANAF</Description>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<PackageReleaseNotes>-Implementat serviciu v8 platitor tva</PackageReleaseNotes>
+	</PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
@@ -29,6 +33,10 @@
     <None Include="..\..\LICENSE">
       <Pack>True</Pack>
       <PackagePath></PackagePath>
+    </None>
+    <None Include="..\..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
     </None>
   </ItemGroup>
 
